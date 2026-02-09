@@ -3,7 +3,7 @@
 // ===================================
 
 // Google Apps Script Web App URL (배포 후 입력)
-const API_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+const API_URL = 'https://script.google.com/macros/s/AKfycbyVybZ62i5wtU32gDMZEk6rLE3RAEimozCY1KIHExNeMMChzIWQTb2oE9zPK_HCO8Ow/exec';
 
 // 로컬 스토리지 키
 const STORAGE_KEYS = {
