@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>김윤환논술 첨삭관리시스템</title>
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" href="./images/logo-icon.png" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- 헤더 -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <img src="./images/logo.png" class="logo-image" alt="김윤환논술" />
+        <span>김윤환논술 첨삭관리시스템</span>
+      </div>
+
+      <nav class="nav">
+        <a href="#" class="nav-link active" data-page="dashboard">
+          <i class="fas fa-chart-pie"></i>
+          <span>대시보드</span>
+        </a>
+        <a href="#" class="nav-link" data-page="scores">
+          <i class="fas fa-pen"></i>
+          <span>점수관리</span>
+        </a>
+        <a href="#" class="nav-link" data-page="student-view">
+          <i class="fas fa-user"></i>
+          <span>학생조회</span>
+        </a>
+      </nav>
+
+      <div class="user-info">
+        <i class="fas fa-user-circle"></i>
+        <span>관리자</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 메인 -->
+  <main class="main-content">
+    <!-- 기존 page 구조 그대로 유지 -->
+    <section id="dashboard" class="page active"></section>
+    <section id="scores" class="page"></section>
+    <section id="student-view" class="page"></section>
+  </main>
+
+  <script src="./js/api.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
