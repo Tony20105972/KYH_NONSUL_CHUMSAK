@@ -1,55 +1,117 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <title>김윤환논술 첨삭관리시스템</title>
+    <meta charset="UTF-8" />
+    <title>김윤환논술 점수관리시스템</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="icon" href="./images/logo-icon.png" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
-
 <body>
-  <!-- 헤더 -->
-  <header class="header">
+
+<!-- ================= HEADER ================= -->
+<header class="header">
     <div class="header-content">
-      <div class="logo">
-        <img src="./images/logo.png" class="logo-image" alt="김윤환논술" />
-        <span>김윤환논술 첨삭관리시스템</span>
-      </div>
+        <div class="logo">
+            <img src="images/logo.png" alt="logo" class="logo-image" />
+            <span>김윤환논술 점수관리시스템</span>
+        </div>
 
-      <nav class="nav">
-        <a href="#" class="nav-link active" data-page="dashboard">
-          <i class="fas fa-chart-pie"></i>
-          <span>대시보드</span>
-        </a>
-        <a href="#" class="nav-link" data-page="scores">
-          <i class="fas fa-pen"></i>
-          <span>점수관리</span>
-        </a>
-        <a href="#" class="nav-link" data-page="student-view">
-          <i class="fas fa-user"></i>
-          <span>학생조회</span>
-        </a>
-      </nav>
+        <nav class="nav">
+            <a class="nav-link active" data-page="dashboard">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>대시보드</span>
+            </a>
+            <a class="nav-link" data-page="scores">
+                <i class="fa-solid fa-pen"></i>
+                <span>점수관리</span>
+            </a>
+            <a class="nav-link" data-page="student-view">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>학생조회</span>
+            </a>
+        </nav>
 
-      <div class="user-info">
-        <i class="fas fa-user-circle"></i>
-        <span>관리자</span>
-      </div>
+        <div class="user-info">
+            <i class="fa-solid fa-user-shield"></i>
+            <span>관리자</span>
+        </div>
     </div>
-  </header>
+</header>
 
-  <!-- 메인 -->
-  <main class="main-content">
-    <!-- 기존 page 구조 그대로 유지 -->
-    <section id="dashboard" class="page active"></section>
+<!-- ================= MAIN ================= -->
+<main class="main-content">
+
+    <!-- ================= DASHBOARD (FIXED) ================= -->
+    <section id="dashboard" class="page active">
+
+        <div class="page-header">
+            <div>
+                <h1>대시보드</h1>
+                <p class="subtitle">전체 반 현황 및 최근 첨삭 통계</p>
+            </div>
+        </div>
+
+        <!-- 통계 카드 -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon" style="background:#e3f2fd;color:#1565c0">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>전체 학생 수</h3>
+                    <span class="stat-number" id="totalStudents">0</span>
+                    <span class="stat-label">명</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon" style="background:#e8f5e9;color:#2e7d32">
+                    <i class="fa-solid fa-file-pen"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>이번 달 첨삭</h3>
+                    <span class="stat-number" id="monthlyScores">0</span>
+                    <span class="stat-label">건</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon" style="background:#fff3e0;color:#e65100">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>평균 점수</h3>
+                    <span class="stat-number" id="avgScore">0</span>
+                    <span class="stat-label">점</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 차트 -->
+        <div class="card">
+            <div class="card-title">반별 평균 점수</div>
+            <canvas id="classChart" height="120"></canvas>
+        </div>
+
+    </section>
+    <!-- ================= END DASHBOARD ================= -->
+
+    <!-- 점수관리 (비워둠 – 기존 그대로) -->
     <section id="scores" class="page"></section>
-    <section id="student-view" class="page"></section>
-  </main>
 
-  <script src="./js/api.js"></script>
-  <script src="./js/main.js"></script>
+    <!-- 학생조회 (비워둠 – 기존 그대로) -->
+    <section id="student-view" class="page"></section>
+
+</main>
+
+<!-- ================= JS ================= -->
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>
